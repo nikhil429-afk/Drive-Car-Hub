@@ -1,0 +1,350 @@
+:root {
+	--page-bg-start: #0b1020;
+	--page-bg-mid: #121a31;
+	--page-bg-end: #0b0f1a;
+	--card-bg: #161e33;
+	--card-border: #f97316;
+	--text-main: #f4f6ff;
+	--text-muted: #a3b0d4;
+	--text-subtle: #7f8bb3;
+	--danger: #ef4444;
+	--danger-soft: rgba(239, 68, 68, 0.2);
+	--primary: #f97316;
+	--primary-hover: #ea580c;
+	--secondary: #334155;
+	--secondary-hover: #1f2937;
+	--success: #16a34a;
+	--success-hover: #15803d;
+	--field-bg: #1b2744;
+	--field-border: #394a73;
+	--field-border-focus: #fb923c;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+	min-height: 100%;
+	margin: 0;
+	width: 100%;
+}
+
+body {
+	font-family: "Segoe UI", "Trebuchet MS", sans-serif;
+	color: var(--text-main);
+	background: radial-gradient(circle at 12% 10%, #1e2d53 0%, transparent 45%),
+		radial-gradient(circle at 88% 0%, #2f1e4e 0%, transparent 40%),
+		linear-gradient(150deg, var(--page-bg-start), var(--page-bg-mid) 45%, var(--page-bg-end));
+}
+
+.sell-page-shell {
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	padding: 88px 16px 32px;
+}
+
+.sell-page-card {
+	width: min(100%, 920px);
+	background: linear-gradient(165deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0)) var(--card-bg);
+	border: 1px solid rgba(249, 115, 22, 0.45);
+	border-radius: 20px;
+	padding: 26px;
+	box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.sell-page-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 16px;
+	margin-bottom: 10px;
+}
+
+.sell-page-title {
+	margin: 0;
+	font-size: clamp(1.65rem, 3.5vw, 2.5rem);
+	line-height: 1.1;
+}
+
+.sell-page-back {
+	border: none;
+	background: transparent;
+	color: #fdba74;
+	cursor: pointer;
+	font-weight: 600;
+	font-size: 0.95rem;
+}
+
+.sell-page-back:hover {
+	color: #fb923c;
+}
+
+.sell-page-subtitle {
+	margin: 0 0 18px;
+	color: var(--text-muted);
+}
+
+.sell-form {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.sell-progress {
+	display: grid;
+	grid-template-columns: repeat(5, minmax(0, 1fr));
+	gap: 8px;
+}
+
+.sell-progress-segment {
+	height: 8px;
+	border-radius: 999px;
+	background: #2f3f63;
+}
+
+.sell-progress-segment.is-active {
+	background: var(--primary);
+}
+
+.sell-alert {
+	border: 1px solid var(--danger);
+	background: var(--danger-soft);
+	border-radius: 10px;
+	color: #fecaca;
+	padding: 10px 12px;
+	font-size: 0.92rem;
+}
+
+.sell-step-card {
+	background: rgba(14, 20, 38, 0.65);
+	border: 1px solid rgba(86, 104, 151, 0.35);
+	border-radius: 14px;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+}
+
+.sell-step-title {
+	margin: 0;
+	font-size: clamp(1.2rem, 2.8vw, 1.8rem);
+}
+
+.sell-step-hint {
+	margin: 0;
+	color: var(--text-subtle);
+	font-size: 0.9rem;
+}
+
+.sell-label {
+	display: block;
+	margin-bottom: 6px;
+	color: #c5d2f8;
+	font-size: 0.92rem;
+	font-weight: 600;
+}
+
+.sell-input,
+.sell-select,
+.sell-textarea,
+.sell-file-input {
+	width: 100%;
+	border: 1px solid var(--field-border);
+	background: var(--field-bg);
+	color: var(--text-main);
+	border-radius: 10px;
+	padding: 12px 14px;
+	font-size: 0.95rem;
+}
+
+.sell-input:focus,
+.sell-select:focus,
+.sell-textarea:focus,
+.sell-file-input:focus {
+	outline: 2px solid rgba(251, 146, 60, 0.22);
+	border-color: var(--field-border-focus);
+}
+
+.sell-textarea {
+	min-height: 120px;
+	resize: vertical;
+}
+
+.sell-file-input {
+	cursor: pointer;
+}
+
+.sell-file-input::file-selector-button {
+	margin-right: 12px;
+	border: none;
+	background: var(--primary);
+	color: #fff;
+	border-radius: 999px;
+	padding: 8px 14px;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+.sell-grid-two {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 12px;
+}
+
+.sell-grid-three {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 10px;
+}
+
+.sell-file-count {
+	color: var(--text-subtle);
+	font-size: 0.85rem;
+	margin-top: 6px;
+}
+
+.sell-file-pill {
+	border: 1px solid rgba(118, 136, 183, 0.5);
+	border-radius: 10px;
+	background: rgba(30, 42, 71, 0.75);
+	padding: 8px 10px;
+}
+
+.sell-file-name {
+	margin: 0;
+	font-size: 0.82rem;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.sell-file-size {
+	margin: 4px 0 0;
+	font-size: 0.75rem;
+	color: var(--text-subtle);
+}
+
+.sell-actions {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 10px;
+	margin-top: 8px;
+}
+
+.sell-btn {
+	border: none;
+	border-radius: 10px;
+	padding: 12px 16px;
+	font-weight: 700;
+	color: #fff;
+	cursor: pointer;
+	transition: transform 140ms ease, filter 140ms ease, background 140ms ease;
+}
+
+.sell-btn:hover {
+	filter: brightness(1.05);
+}
+
+.sell-btn:active {
+	transform: translateY(1px);
+}
+
+.sell-btn:disabled {
+	opacity: 0.65;
+	cursor: not-allowed;
+}
+
+.sell-btn-full {
+	width: 100%;
+}
+
+.sell-btn-primary {
+	background: var(--primary);
+}
+
+.sell-btn-primary:hover {
+	background: var(--primary-hover);
+}
+
+.sell-btn-secondary {
+	background: var(--secondary);
+}
+
+.sell-btn-secondary:hover {
+	background: var(--secondary-hover);
+}
+
+.sell-btn-success {
+	background: var(--success);
+}
+
+.sell-btn-success:hover {
+	background: var(--success-hover);
+}
+
+.sell-state-card {
+	border-radius: 14px;
+	padding: 22px;
+	border: 1px solid rgba(100, 116, 154, 0.5);
+	background: rgba(15, 22, 41, 0.7);
+	text-align: center;
+}
+
+.sell-state-auth {
+	border-color: rgba(251, 146, 60, 0.5);
+}
+
+.sell-state-success {
+	border-color: rgba(34, 197, 94, 0.5);
+}
+
+.sell-state-error {
+	border-color: rgba(239, 68, 68, 0.6);
+}
+
+.sell-state-icon {
+	color: #f8fafc;
+	font-size: 0.8rem;
+	letter-spacing: 0.14em;
+	font-weight: 700;
+	margin-bottom: 8px;
+}
+
+.sell-state-title {
+	margin: 0 0 10px;
+	font-size: 1.5rem;
+}
+
+.sell-state-text {
+	margin: 0 0 10px;
+	color: var(--text-muted);
+}
+
+.sell-state-note {
+	margin: 0;
+	color: var(--text-subtle);
+	font-size: 0.9rem;
+}
+
+@media (min-width: 700px) {
+	.sell-page-card {
+		padding: 34px;
+	}
+
+	.sell-grid-two {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.sell-grid-three {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+
+	.sell-actions {
+		grid-template-columns: 200px 1fr;
+	}
+}
